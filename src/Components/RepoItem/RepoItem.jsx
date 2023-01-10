@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import "./RepoItem.scss";
-import { Context } from "../../UI/context/Context";
+import { Context } from "../../UI/Context/Context";
 ;
 
 const RepoItem = () => {
