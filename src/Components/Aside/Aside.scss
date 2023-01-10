@@ -1,0 +1,130 @@
+$title-color: #C9D1D9;
+$username-color: #687078;
+$btn-bg-color: #21262D;
+
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+.aside {
+  max-width: 300px;
+  margin: {
+    top: 50px;
+  }
+
+    &-box {
+    &__user {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+
+    &__title {
+      color: $title-color;
+      font-size: 25px;
+
+      margin: {
+        top: 20px;
+      }
+    }
+
+    &__username {
+      color: $username-color;
+      font-size: 20px;
+
+      margin: {
+        top: 5px;
+      }
+    }
+
+    &__description {
+      color: $title-color;
+      letter-spacing: .1px;
+      max-width: 300px;
+
+      margin: {
+        top: 20px;
+      }
+
+      line-height: 25px;
+    }
+
+    &__edit {
+      background-color: $btn-bg-color;
+      color: $title-color;
+      border: .1px solid $title-color;
+      width: 100%;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      opacity: .6;
+
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+
+      cursor: pointer;
+      margin: {
+        top: 20px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-content {
+      @include flexbox(flex, flex-start, center, 7.5px, row);
+
+      .fa-users {
+        color: $title-color;
+        font-size: 15px;
+      }
+
+      &-total {
+        color: $title-color;
+        font-size: 15px;
+      }
+
+      &__description {
+        color: $title-color;
+        font-size: 15px;
+      }
+
+      margin: {
+        top: 20px;
+      }
+    }
+
+    &-icon {
+      @include flexbox(flex, flex-start, center, 10px, row);
+
+      margin: {
+        top: 15px;
+      }
+
+      &-icons {
+        @include flexbox(flex, flex-start, center, 10px, row);
+
+        i {
+          color: $title-color;
+        }
+
+        &__paragraph {
+          color: $title-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
