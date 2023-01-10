@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Context } from "../context/Context";
+import { Context } from "../Context/Context";
 import "./Followers.scss";
 
 const Followers = () => {
