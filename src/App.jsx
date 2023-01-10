@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./Components/Header/Header";
-import { Context } from "./UI/context/Context";
+import { Context } from "./UI/Context/Context";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style.scss";
 import Home from "./pages/Home/Home";
