@@ -1,0 +1,113 @@
+$icon-color: #848C96;
+$link-color: #C9D1CD;
+$total-color: #343942;
+$hover-color: #161B22;
+$border-color: #F78166;
+$hr-color: #21262D;
+
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+.wrapper {
+  position: relative;
+  overflow-y: hidden;
+  .rooms {
+    @include flexbox(flex, center, flex-start, 10px, row);
+   
+
+    &-box { overflow-y: hidden;
+      @include flexbox(flex, center, center, 10px, row);
+      height: 0px;
+      cursor: pointer;
+      padding: {
+        top: 20px;
+        bottom: 20px;
+        right: 10px;
+        left: 10px;
+      }
+
+      border-radius: 10px;
+
+      margin: {
+        top: 50px;
+      }
+
+      &--active {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          background-color: $border-color;
+          height: 2px;
+          width: 100%;
+        }
+      }
+
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      i {
+        color: $icon-color;
+      }
+
+      &__title {
+        color: $link-color;
+      }
+
+      &__total {
+        background-color: $total-color;
+        color: $link-color;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        font-size: 14px;
+
+        padding: {
+          top: 5px;
+          bottom: 5px;
+          right: 7.5px;
+          left: 7.5px;
+        }
+
+        @include flexbox(flex, center, center, stretch, row);
+      }
+    }
+
+
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: .1px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background-color: $hr-color;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .wrapper {
+    .rooms {
+      @include flexbox(flex, flex-start, flex-start, 10px, row);
+      overflow: auto;
+
+      &-box {
+        &::before{
+          display: none;
+        }
+      }
+    }
+  }
+}
