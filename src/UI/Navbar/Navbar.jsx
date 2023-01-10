@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { Context } from "../context/Context";
+import { Context } from "../Context/Context";
 import "./Navbar.scss";
 
 const Navbar = () => {
