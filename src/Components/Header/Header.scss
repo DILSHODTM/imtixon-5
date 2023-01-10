@@ -1,0 +1,211 @@
+$header-bg-color: #161B22;
+$github-color: #F0F6FC;
+$link-color: #F0F6D9;
+$border-color:#363B3F;
+$placeholder-color: #C2C3C5;
+$input-bg-color: #0D1117;
+
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+.btn-transparent{
+  
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $placeholder-color;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  &:hover {
+    color: $link-color;
+  }
+}
+.header {
+  background-color: $header-bg-color;
+  width: 100%;
+  height: 60px;
+ 
+  .nav {
+
+    @include flexbox(flex, space-between, center, stretch, row);
+
+    .fa-bars {
+      color: $github-color;
+      cursor: pointer;
+      font-size: 25px;
+      display: none;
+    }
+
+    &-box {
+      @include flexbox(flex, flex-start, center, 20px, row);
+      height: 60px;
+      
+
+      .fa-github {
+        color: $github-color;
+        font-size: 35px;
+        cursor: pointer;
+
+        &:hover {
+          color: $placeholder-color;
+        }
+      }
+
+      &-form {
+        @include flexbox(flex, flex-start, center, stretch, row);
+        position: relative;
+
+        &__input {
+          width: 250px;
+          border: 1px solid $border-color;
+          outline: none;
+          position: relative;
+          color: $placeholder-color;
+          background-color: $input-bg-color;
+          padding: 5px 10px;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+
+          &::placeholder {
+            color: $placeholder-color;
+          }
+        }
+
+        &-span {
+          color: $placeholder-color;
+          border: 1px solid $border-color;
+          height: 20px;
+          width: 20px;
+          font-size: 15px;
+          @include flexbox(flex, center, center, stretch, row);
+          border-radius: 2.5px;
+          -webkit-border-radius: 2.5px;
+          -moz-border-radius: 2.5px;
+          -ms-border-radius: 2.5px;
+          -o-border-radius: 2.5px;
+          position: absolute;
+          right: 5px;
+          z-index: 1;
+          background-color: $input-bg-color;
+        }
+      }
+
+      &-list {
+        @include flexbox(flex, flex-start, center, 15px, row);
+
+        &-item {
+          &__link {
+            color: $link-color;
+            font-weight: 600;
+            font-size: 14px;
+
+            &:hover {
+              color: $placeholder-color;
+            }
+          }
+        }
+      }
+
+      .fa-bell {
+        color: $github-color;
+        cursor: pointer;
+
+        &:hover {
+          color: $placeholder-color;
+        }
+      }
+
+      &-drop {
+        @include flexbox(flex, center, center, 7px, row);
+        cursor: pointer;
+
+        .fa-plus {
+          color: $github-color;
+          cursor: pointer;
+          font-size: 14px;
+        }
+
+        .fa-caret-down {
+          color: $github-color;
+          cursor: pointer;
+          font-size: 13px;
+        }
+
+        &:hover .fa-plus {
+          color: $placeholder-color;
+        }
+
+        &:hover .fa-caret-down {
+          color: $placeholder-color;
+        }
+      }
+
+      &-contact {
+        @include flexbox(flex, center, center, 5px, row);
+        cursor: pointer;
+
+        &__img {
+          margin-right: 5px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          height: 25px;
+          width: 25px;
+        }
+
+        .fa-caret-down {
+          color: $github-color;
+          cursor: pointer;
+          font-size: 13px;
+        }
+
+        &:hover .fa-caret-down {
+          color: $placeholder-color;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .header {
+    .nav {
+      .fa-bars {
+        display: block;
+      }
+
+      &-box {
+        &-form {
+          display: none;
+        }
+
+        &-list {
+          display: none;
+        }
+
+        &-drop {
+          display: none;
+        }
+
+        &-contact {
+          display: none;
+        }
+      }
+
+
+    }
+  }
+}
