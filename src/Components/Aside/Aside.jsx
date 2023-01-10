@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./Aside.scss";
-import { Context } from "../../UI/context/Context";
+import { Context } from "../../UI/Context/Context";
 import {NavLink} from "react-router-dom";
 
 const Aside = () => {
