@@ -1,0 +1,117 @@
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+@mixin GridFunction($grid, $r, $gap) {
+  display: $grid;
+  grid-template-columns: $r;
+  gap: $gap;
+}
+
+$text-color: #BEC6CD;
+$border-color: #30363D;
+$repo-link-color: #56A2FA;
+
+.pinnedCard {
+  margin: {
+    top: 100px;
+  }
+
+  &__text {
+    color: $text-color;
+    font-size: 18px;
+    letter-spacing: .2px;
+  }
+
+  &-container {
+    @include GridFunction(grid, repeat(2, auto), 20px);
+    width: 100%;
+    
+
+    &-name {
+      width: 400px;
+      height: 100px;
+      border: .2px solid $border-color;
+      padding: 15px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+
+      &-container {
+        @include flexbox(flex, space-between, flex-start, stretch, row);
+
+        &-box {
+          &__title {
+            color: $repo-link-color;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+          }
+
+          i {
+            color: $text-color;
+          }
+
+          @include flexbox(flex, flex-start, center, 10px, row);
+
+          &__text {
+            border: .2px solid $border-color;
+            color: $text-color;
+            font-size: 12px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            padding: 3.5px;
+            position: relative;
+            bottom: 5px;
+          }
+        }
+      }
+
+      margin: {
+        top: 15px;
+      }
+
+      &__comments {
+        color: $text-color;
+        font-size: 12px;
+        letter-spacing: .3px;
+
+        margin: {
+          top: 5px;
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .pinnedCard {
+    margin: {
+      top: 20px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 440px) {
+  .pinnedCard{
+    &-container{
+      &-name {
+        width: 100%;
+      }
+    }
+  }
+}
