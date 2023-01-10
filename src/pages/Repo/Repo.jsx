@@ -1,5 +1,5 @@
 import React from 'react';
-import RepoItem from '../../components/RepoItem/RepoItem';
+import RepoItem from '../../Components/RepoItem/RepoItem';
 
 const Repo = () => {
   return (
