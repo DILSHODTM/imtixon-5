@@ -8,7 +8,7 @@ import Rooms from "./Components/Rooms/Rooms";
 import Aside from "./Components/Aside/Aside";
 import Repo from "./pages/Repo/Repo";
 import Followers from "./UI/Followers/Followers";
-import Footer from "./components/Footer/Footer";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   const [navbar, setNavbar] = useState(false);
