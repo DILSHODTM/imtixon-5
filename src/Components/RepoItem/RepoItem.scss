@@ -1,0 +1,257 @@
+$input-color: #30363D;
+$placeholder-color: #F0F6B6;
+$repo-name: #4784C9;
+$title-color: #737C85;
+$star: #ffff00;
+$hr-color: #21262D;
+
+@mixin flexbox($flex, $jc, $ai, $gap, $fd) {
+  display: $flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+  flex-direction: $fd;
+}
+
+.form {
+  overflow-x: hidden;
+  margin: {
+    top: 50px;
+  }
+
+  &__input {
+    border: .2px solid $input-color;
+    background-color: transparent;
+    outline: none;
+    color: $placeholder-color;
+    opacity: .8;
+    width: 800px;
+    letter-spacing: .2px;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    padding: {
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+    }
+  }
+}
+
+.repo-container {
+  overflow-y: hidden;
+  @include flexbox(flex, space-between, flex-start, stretch, row);
+  position: relative;
+  
+
+  margin: {
+    top: 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: .2px;
+    width: 100%;
+    background-color: $hr-color;
+    top: -25px
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: .2px;
+    width: 100%;
+    background-color: $hr-color;
+    bottom: -25px
+  }
+
+  &-box {
+    &-titles {
+      @include flexbox(flex, flex-start, center, 20px, row);
+
+      &__name {
+        color: $repo-name;
+        font-size: 22px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &__public {
+        color: $title-color;
+        font-size: 12px;
+        letter-spacing: .5px;
+        border: .2px solid $hr-color;
+
+        padding: 2.5px 5px;
+
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+    }
+
+    &__description {
+      color: $title-color;
+      font-size: 14px;
+      margin: 10px 0 15px 0;
+    }
+
+    &-content {
+      @include flexbox(flex, flex-start, center, 20px, row);
+
+      &-language {
+        @include flexbox(flex, flex-start, center, 5px, row);
+
+        &__color {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          background-color: yellow;
+        }
+
+        &__text {
+          color: $title-color;
+          font-size: 12px;
+          letter-spacing: .2px;
+        }
+      }
+
+      &__text {
+        color: $title-color;
+        font-size: 12px;
+        letter-spacing: .2px;
+      }
+    }
+  }
+
+  &-star {
+    @include flexbox(flex, center, flex-start, 10px, row);
+    padding: 5px 10px;
+    cursor: pointer;
+    border: .2px solid $hr-color;
+    z-index: 1;
+    background-color: transparent;
+
+    .fa-star {
+      color: $title-color;
+      font-size: 13px;
+    }
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    &__text {
+      color: $title-color;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .repo-container {
+    
+    width: 650px;
+    gap: 20px;
+   
+
+  }
+}
+@media screen and (max-width: 1100px) {
+  .repo-container {
+    
+    width: 580px;
+    gap: 20px;
+   
+
+  }
+}
+  
+@media screen and (max-width: 1000px) {
+  .repo-container {
+    
+    width: 500px;
+    gap: 20px;
+   
+
+  }
+}
+@media screen and (max-width: 928px) {
+  .repo-container {
+    
+    width: 480px;
+    gap: 20px;
+   
+
+  }
+}
+@media screen and (max-width: 900px) {
+  .repo-container {
+    
+    width: 420px;
+    gap: 20px;
+   
+
+  }
+}
+@media screen and (max-width: 830px) {
+  .repo-container {
+    
+    width: 380px;
+    gap: 20px;
+   
+
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .repo-container {
+    width:600px ;
+    gap: 20px;
+  
+
+  }
+}
+@media screen and (max-width: 660px) {
+  .repo-container {
+    width:500px ;
+    gap: 20px;
+  
+
+  }
+}
+@media screen and (max-width: 560px) {
+  .repo-container {
+    width:400px ;
+    gap: 20px;
+  
+
+  }
+}
+@media screen and (max-width: 472px) {
+  .repo-container {
+    width:360px ;
+    gap: 20px;
+  
+
+  }
+}
