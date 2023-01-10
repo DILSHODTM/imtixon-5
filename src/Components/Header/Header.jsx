@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import Navbar from "../../UI/Navbar/Navbar";
-import { Context } from "../../UI/context/Context";
+import { Context } from "../../UI/Context/Context";
 import "./Header.scss";
 
 const Header = () => {
