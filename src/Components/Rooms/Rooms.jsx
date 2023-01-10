@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import "./Rooms.scss";
 import { NavLink } from "react-router-dom";
-import { Context } from "../../UI/context/Context";
+import { Context } from "../../UI/Context/Context";
 
 const Rooms = () => {
   const { apiValue,object } = useContext(Context);
